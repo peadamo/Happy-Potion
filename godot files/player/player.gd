@@ -9,6 +9,12 @@ extends Node3D
 var mouse_sensitivity = 0.001
 
 func _ready():
+	#temp
+	$AnimationPlayer.play("Sit_pose")
+	#temp
+	
+	
+	
 	skeleton_ik_3d.start()
 	skeleton_ik_3d_2.start()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
