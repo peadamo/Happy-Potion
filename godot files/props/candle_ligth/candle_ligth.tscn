@@ -1,0 +1,92 @@
+[gd_scene load_steps=16 format=3 uid="uid://dknv4u8ig2xl6"]
+
+[ext_resource type="Script" path="res://props/candle_ligth/candle_ligth.gd" id="1_fpb8o"]
+
+[sub_resource type="Gradient" id="Gradient_xgmqj"]
+offsets = PackedFloat32Array(0, 0.758621, 1)
+colors = PackedColorArray(0.968627, 0.752941, 0, 1, 0.833169, 0.646698, 0, 1, 0.819608, 0.32549, 0.0352941, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_udumj"]
+noise_type = 0
+frequency = 0.2426
+
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_pc7b4"]
+color_ramp = SubResource("Gradient_xgmqj")
+noise = SubResource("FastNoiseLite_udumj")
+
+[sub_resource type="Curve" id="Curve_0pga2"]
+_data = [Vector2(0, 0.260377), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_irobi"]
+curve = SubResource("Curve_0pga2")
+
+[sub_resource type="Gradient" id="Gradient_6iuxd"]
+offsets = PackedFloat32Array(0, 0.0307018, 0.245614, 0.973684)
+colors = PackedColorArray(0.164271, 0.407481, 1, 1, 0.702484, 0, 0.0600501, 1, 0.92284, 0.660018, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_x3ivk"]
+gradient = SubResource("Gradient_6iuxd")
+
+[sub_resource type="Curve" id="Curve_p7tcg"]
+_data = [Vector2(0.0303644, 1), 0.0, 0.0, 0, 0, Vector2(0.98583, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_p2pal"]
+curve = SubResource("Curve_p7tcg")
+
+[sub_resource type="Curve" id="Curve_xjdfn"]
+_data = [Vector2(0, 0.109434), 0.0, 0.0, 0, 0, Vector2(1, 0.05), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_djvko"]
+curve = SubResource("Curve_xjdfn")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6if4r"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 0.0
+emission_ring_radius = 0.1
+emission_ring_inner_radius = 0.0
+velocity_pivot = Vector3(0, 1, 0)
+direction = Vector3(0, 1, 0)
+spread = 15.667
+initial_velocity_max = 1.0
+gravity = Vector3(0, 1, 0)
+scale_curve = SubResource("CurveTexture_djvko")
+color = Color(1, 1, 1, 0.203922)
+color_ramp = SubResource("GradientTexture1D_x3ivk")
+alpha_curve = SubResource("CurveTexture_irobi")
+emission_curve = SubResource("CurveTexture_p2pal")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c7c2x"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_jljw1"]
+material = SubResource("StandardMaterial3D_c7c2x")
+radius = 0.05
+height = 0.1
+
+[node name="CandleLigth" type="Node3D"]
+script = ExtResource("1_fpb8o")
+noise = SubResource("NoiseTexture3D_pc7b4")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_energy = 0.1
+light_specular = 0.935
+shadow_enabled = true
+shadow_opacity = 0.87
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="OmniLight3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.0117859, 0)
+cast_shadow = 0
+gi_mode = 0
+amount = 100
+lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_6if4r")
+draw_pass_1 = SubResource("SphereMesh_jljw1")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.14835, 0, 0)

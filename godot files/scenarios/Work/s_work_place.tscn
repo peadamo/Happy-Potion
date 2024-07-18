@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://batkpnl3ou7eq"]
+[gd_scene load_steps=7 format=3 uid="uid://batkpnl3ou7eq"]
 
 [ext_resource type="PackedScene" uid="uid://bhdgc6r0kqpox" path="res://ASSETS/3D_MODELS/Alchemy Station/Alchemy Station.glb" id="1_pu2n8"]
 [ext_resource type="PackedScene" uid="uid://btqmhs7q6mfr1" path="res://player/player.tscn" id="2_btklo"]
+[ext_resource type="PackedScene" uid="uid://dknv4u8ig2xl6" path="res://props/candle_ligth/candle_ligth.tscn" id="3_h2ups"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_iiyyu"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -927,8 +928,11 @@ transform = Transform3D(1, -1.04827e-13, 1.19211e-06, 6.59558e-07, -0.833001, -0
 
 [node name="Alchemy Station" parent="." instance=ExtResource("1_pu2n8")]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.268994, 1.1072, 0.526379)
-light_energy = 0.1
+[node name="Cylinder" parent="Alchemy Station" index="8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00082, 0, -0.409335)
+
+[node name="CandleLigth" parent="Alchemy Station/Cylinder" index="0" instance=ExtResource("3_h2ups")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.253893, 1.02134, 0.544656)
 
 [editable path="player2"]
+[editable path="Alchemy Station"]
