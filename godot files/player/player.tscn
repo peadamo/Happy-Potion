@@ -160,12 +160,12 @@ tip_bone = &"DEF-spine.006"
 target_node = NodePath("../Head_rotation/Head_rotation_y")
 
 [node name="Head_rotation" type="Marker3D" parent="player/Skeleton3D" index="3"]
-transform = Transform3D(1, 0, 0, 0, 0.985712, -0.168438, 0, 0.168438, 0.985712, 0, 1.694, -0.093)
+transform = Transform3D(1, 0, 0, 0, 0.570713, -0.821149, 0, 0.821149, 0.570713, 0, 1.694, -0.093)
 
 [node name="Head_rotation_y" type="Marker3D" parent="player/Skeleton3D/Head_rotation" index="0"]
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="player/Skeleton3D" index="4"]
-transform = Transform3D(1, 2.43272e-14, 1.19211e-06, 4.09244e-07, -0.939228, -0.343295, 1.11966e-06, 0.343295, -0.939227, -6.75174e-15, 1.26521, -0.0732094)
+transform = Transform3D(1, 2.43272e-14, 1.19211e-06, 4.09245e-07, -0.939227, -0.343295, 1.11966e-06, 0.343295, -0.939227, -6.75174e-15, 1.26521, -0.0732099)
 bone_name = "jaw_master"
 bone_idx = 262
 

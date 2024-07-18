@@ -22,14 +22,14 @@ point_count = 2
 curve = SubResource("Curve_0pga2")
 
 [sub_resource type="Gradient" id="Gradient_6iuxd"]
-offsets = PackedFloat32Array(0, 0.0307018, 0.245614, 0.973684)
-colors = PackedColorArray(0.164271, 0.407481, 1, 1, 0.702484, 0, 0.0600501, 1, 0.92284, 0.660018, 0, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0, 0.0307018, 0.179825, 0.609649, 0.973684)
+colors = PackedColorArray(0.164271, 0.407481, 1, 1, 0.702484, 0, 0.0600501, 1, 0.994931, 0.821661, 0, 1, 0.92284, 0.660018, 0, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_x3ivk"]
 gradient = SubResource("Gradient_6iuxd")
 
 [sub_resource type="Curve" id="Curve_p7tcg"]
-_data = [Vector2(0.0303644, 1), 0.0, 0.0, 0, 0, Vector2(0.98583, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0.0303644, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_p2pal"]
@@ -54,7 +54,7 @@ spread = 15.667
 initial_velocity_max = 1.0
 gravity = Vector3(0, 1, 0)
 scale_curve = SubResource("CurveTexture_djvko")
-color = Color(1, 1, 1, 0.203922)
+color = Color(1, 1, 1, 0.627451)
 color_ramp = SubResource("GradientTexture1D_x3ivk")
 alpha_curve = SubResource("CurveTexture_irobi")
 emission_curve = SubResource("CurveTexture_p2pal")
@@ -68,6 +68,8 @@ vertex_color_use_as_albedo = true
 material = SubResource("StandardMaterial3D_c7c2x")
 radius = 0.05
 height = 0.1
+radial_segments = 4
+rings = 1
 
 [node name="CandleLigth" type="Node3D"]
 script = ExtResource("1_fpb8o")
@@ -87,6 +89,3 @@ amount = 100
 lifetime = 0.5
 process_material = SubResource("ParticleProcessMaterial_6if4r")
 draw_pass_1 = SubResource("SphereMesh_jljw1")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.14835, 0, 0)
