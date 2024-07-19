@@ -4,7 +4,7 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	animation_player.play("Get_potion")
+	animation_player.play("Idle_roof")
 	pass # Replace with function body.
 
 

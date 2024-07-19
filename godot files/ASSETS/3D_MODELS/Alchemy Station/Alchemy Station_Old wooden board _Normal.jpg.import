@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://c7r7ebhm4xq30"
+path.s3tc="res://.godot/imported/Alchemy Station_Old wooden board _Normal.jpg-be634031b0c6a0f0a9f5e482219aa07e.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "48f3deda6e3de4ae5d330e831e8ecc5a"
+}
+
+[deps]
+
+source_file="res://ASSETS/3D_MODELS/Alchemy Station/Alchemy Station_Old wooden board _Normal.jpg"
+dest_files=["res://.godot/imported/Alchemy Station_Old wooden board _Normal.jpg-be634031b0c6a0f0a9f5e482219aa07e.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://ASSETS/3D_MODELS/Alchemy Station/Alchemy Station_Old wooden board _Normal.jpg"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

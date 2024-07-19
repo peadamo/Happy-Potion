@@ -4,7 +4,7 @@
 
 [sub_resource type="Gradient" id="Gradient_xgmqj"]
 offsets = PackedFloat32Array(0, 0.758621, 1)
-colors = PackedColorArray(0.968627, 0.752941, 0, 1, 0.833169, 0.646698, 0, 1, 0.819608, 0.32549, 0.0352941, 1)
+colors = PackedColorArray(1, 0.883647, 0.606939, 1, 0.833169, 0.646698, 0, 1, 0.819608, 0.32549, 0.0352941, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_udumj"]
 noise_type = 0
