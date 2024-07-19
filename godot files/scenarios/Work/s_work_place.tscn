@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://batkpnl3ou7eq"]
 
-[ext_resource type="PackedScene" uid="uid://bhdgc6r0kqpox" path="res://ASSETS/3D_MODELS/Alchemy Station/Alchemy Station.glb" id="1_pu2n8"]
+[ext_resource type="PackedScene" uid="uid://bf4g6yomdlj13" path="res://ASSETS/3D_MODELS/Alchemy Station/Alchemy Station.glb" id="1_pu2n8"]
 [ext_resource type="PackedScene" uid="uid://btqmhs7q6mfr1" path="res://player/player.tscn" id="2_btklo"]
 [ext_resource type="PackedScene" uid="uid://dknv4u8ig2xl6" path="res://props/candle_ligth/candle_ligth.tscn" id="3_h2ups"]
 [ext_resource type="AudioStream" uid="uid://dano84376umgh" path="res://ASSETS/sounds/ambience_dungeon.mp3" id="7_b4ga3"]
@@ -927,10 +927,10 @@ bones/705/scale = Vector3(1, 1, 1)
 [node name="BoneAttachment3D" parent="player2/player/Skeleton3D" index="4"]
 transform = Transform3D(1, -1.04827e-13, 1.19211e-06, 6.59558e-07, -0.833001, -0.553271, 9.93026e-07, 0.553271, -0.833001, -1.13714e-14, 1.69411, -0.0632257)
 
-[node name="Alchemy Station" parent="." instance=ExtResource("1_pu2n8")]
+[node name="Camera3D" parent="player2/player/Skeleton3D/BoneAttachment3D/head_position" index="0"]
+current = true
 
-[node name="Cylinder" parent="Alchemy Station" index="9"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.121567, 0, -0.42214)
+[node name="Alchemy Station" parent="." instance=ExtResource("1_pu2n8")]
 
 [node name="sounds" type="Node" parent="."]
 
@@ -940,7 +940,7 @@ autoplay = true
 bus = &"Ambienc"
 
 [node name="monster" parent="." instance=ExtResource("8_80sye")]
-transform = Transform3D(0.57353, -8.66006e-08, 0.0863902, -8.75775e-08, -0.58, -1.03777e-14, 0.0863902, -1.30445e-08, -0.57353, -0.174834, 2.11479, 0.372226)
+transform = Transform3D(0.0863902, -1.30445e-08, -0.57353, -8.75775e-08, -0.58, -1.28139e-14, -0.57353, 8.66006e-08, -0.0863902, 1.70071, 1.70944, -0.245038)
 
 [node name="Skeleton3D" parent="monster/rig" index="0"]
 bones/0/rotation = Quaternion(-0.707107, 0, 0, 0.707107)
@@ -1832,7 +1832,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.379021, 1.02065, 0.124641)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.811571, 1.02065, 0.124641)
 
 [editable path="player2"]
-[editable path="Alchemy Station"]
 [editable path="monster"]
 [editable path="ligthd/CandleLigth"]
 [editable path="ligthd/CandleLigth2"]

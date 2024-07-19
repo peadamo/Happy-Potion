@@ -2,13 +2,15 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbp345crunhdr"
+uid="uid://cs8d5hc0mky3f"
 path.s3tc="res://.godot/imported/Alchemy Station_bronze_normal.jpg-2f163e6eb041e0b46014f78a73bbfddc.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
+generator_parameters={
+"md5": "0fa6270876c30d8e27d74dcb52048e9f"
+}
 
 [deps]
 

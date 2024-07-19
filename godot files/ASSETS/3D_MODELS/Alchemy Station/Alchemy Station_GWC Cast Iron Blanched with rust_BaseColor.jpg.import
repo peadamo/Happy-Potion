@@ -2,13 +2,15 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdq1erwvxe24p"
+uid="uid://cd3ugxud6ve2q"
 path.s3tc="res://.godot/imported/Alchemy Station_GWC Cast Iron Blanched with rust_BaseColor.jpg-49fecb773051677291986a7042ea0ece.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
+generator_parameters={
+"md5": "7b6fdeb24b1420b87cd9ef1ca3e6d0c6"
+}
 
 [deps]
 

@@ -2,13 +2,15 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jvwsdd7e54mb"
+uid="uid://b8e3l008onv4q"
 path.s3tc="res://.godot/imported/Alchemy Station_japanese_stone_wall_diff_8k.jpg-cfb38959737ab486ebbd19af34f7f883.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
+generator_parameters={
+"md5": "3dfbbe24c6f78a5d259a0eeedac25ec4"
+}
 
 [deps]
 

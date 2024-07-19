@@ -2,13 +2,15 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuqybqk3gd0gy"
+uid="uid://ccve6krb76yrx"
 path.s3tc="res://.godot/imported/Alchemy Station__Roughness_.png-3acacfcf9d140782eb6b3c0ff5823169.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
+generator_parameters={
+"md5": "8b67ef4f8f2d7310d5488550eea8e632"
+}
 
 [deps]
 

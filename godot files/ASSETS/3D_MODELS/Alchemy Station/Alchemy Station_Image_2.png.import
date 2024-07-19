@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://b7gre4m38thv6"
+path.s3tc="res://.godot/imported/Alchemy Station_Image_2.png-132a5dabce0719ed99382dfa2400e5b1.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "2c4b076b2e2b8b458db189c2e38839ca"
+}
+
+[deps]
+
+source_file="res://ASSETS/3D_MODELS/Alchemy Station/Alchemy Station_Image_2.png"
+dest_files=["res://.godot/imported/Alchemy Station_Image_2.png-132a5dabce0719ed99382dfa2400e5b1.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://ASSETS/3D_MODELS/Alchemy Station/Alchemy Station_Image_2.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

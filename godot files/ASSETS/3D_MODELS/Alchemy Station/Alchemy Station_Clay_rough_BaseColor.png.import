@@ -2,13 +2,15 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4ypl3q2u81g1"
+uid="uid://djuyw7m6fux3j"
 path.s3tc="res://.godot/imported/Alchemy Station_Clay_rough_BaseColor.png-d353d85de38a67350d6ffa636cd416cf.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
+generator_parameters={
+"md5": "3f24e23f4a4032b9de6846c7c4a01485"
+}
 
 [deps]
 

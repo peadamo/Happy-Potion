@@ -2,13 +2,15 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgvcxrq40jnru"
+uid="uid://dak8i6ud438dn"
 path.s3tc="res://.godot/imported/Alchemy Station_Substance_graph_basecolor.jpg-5cf7f87c8acd0c944c44111d4ab1cc72.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
+generator_parameters={
+"md5": "493990d168a43825797d9f6e2c0240fb"
+}
 
 [deps]
 
