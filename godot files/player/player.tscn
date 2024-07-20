@@ -1,44 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://btqmhs7q6mfr1"]
+[gd_scene load_steps=4 format=3 uid="uid://btqmhs7q6mfr1"]
 
 [ext_resource type="PackedScene" uid="uid://d37aibjhfk66u" path="res://ASSETS/3D_MODELS/Player/player.glb" id="1_mirc0"]
 [ext_resource type="Script" path="res://player/player.gd" id="2_3ipnw"]
-
-[sub_resource type="Animation" id="Animation_h5dd4"]
-resource_name = "ZOOM"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:fov")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [75.0, 40.0]
-}
-
-[sub_resource type="Animation" id="Animation_4u8bl"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:fov")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [75.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_erpeh"]
-_data = {
-"RESET": SubResource("Animation_4u8bl"),
-"ZOOM": SubResource("Animation_h5dd4")
-}
+[ext_resource type="PackedScene" uid="uid://b0iyoqr83nnfp" path="res://player/camera_3d.tscn" id="3_mpnd8"]
 
 [node name="player" instance=ExtResource("1_mirc0")]
 script = ExtResource("2_3ipnw")
@@ -184,6 +148,10 @@ bones/690/rotation = Quaternion(-0.618998, 7.58916e-15, -1.7708e-14, 0.785392)
 bones/704/position = Vector3(-0.367539, -0.0666929, 0.48219)
 bones/704/rotation = Quaternion(-0.618998, 7.58916e-15, -1.7708e-14, 0.785392)
 
+[node name="CharacterMesh" parent="player/Skeleton3D" index="0"]
+layers = 2
+gi_mode = 2
+
 [node name="SkeletonIK3D" type="SkeletonIK3D" parent="player/Skeleton3D" index="1"]
 process_priority = 1
 root_bone = &"ORG-spine.005"
@@ -202,16 +170,11 @@ transform = Transform3D(1, 0, 0, 0, 0.570713, -0.821149, 0, 0.821149, 0.570713, 
 [node name="Head_rotation_y" type="Marker3D" parent="player/Skeleton3D/Head_rotation" index="0"]
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="player/Skeleton3D" index="4"]
-transform = Transform3D(1, 2.43272e-14, 1.19211e-06, 4.09245e-07, -0.939227, -0.343295, 1.11966e-06, 0.343295, -0.939227, -6.75174e-15, 1.26521, -0.0732099)
+transform = Transform3D(1, 2.43272e-14, 1.19211e-06, 4.09244e-07, -0.939228, -0.343295, 1.11966e-06, 0.343295, -0.939227, -6.75174e-15, 1.26521, -0.0732094)
 bone_name = "jaw_master"
 bone_idx = 262
 
 [node name="head_position" type="Marker3D" parent="player/Skeleton3D/BoneAttachment3D" index="0"]
 
-[node name="Camera3D" type="Camera3D" parent="player/Skeleton3D/BoneAttachment3D/head_position" index="0"]
-transform = Transform3D(-1.00001, 5.7535e-07, -2.24098e-06, 7.35597e-07, -0.839265, -0.543726, -2.19361e-06, -0.543722, 0.839271, 0, 0, -0.08)
-
-[node name="CAMERA_ZOOM" type="AnimationPlayer" parent="player/Skeleton3D/BoneAttachment3D/head_position/Camera3D" index="0"]
-libraries = {
-"": SubResource("AnimationLibrary_erpeh")
-}
+[node name="Camera3D" parent="player/Skeleton3D/BoneAttachment3D/head_position" index="0" instance=ExtResource("3_mpnd8")]
+transform = Transform3D(-1.00001, 8.74228e-08, 0, -7.34026e-08, -0.83962, -0.54318, -4.74863e-08, -0.543174, 0.839628, 0, 0, -0.08)

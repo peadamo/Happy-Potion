@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cehjj47fx5co4"]
+
+[ext_resource type="PackedScene" uid="uid://bf4g6yomdlj13" path="res://ASSETS/3D_MODELS/Alchemy Station/Alchemy Station.glb" id="1_dy5mf"]
+
+[node name="Alchemy Station" instance=ExtResource("1_dy5mf")]

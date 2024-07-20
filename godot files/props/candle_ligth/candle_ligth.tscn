@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://dknv4u8ig2xl6"]
+[gd_scene load_steps=17 format=3 uid="uid://dknv4u8ig2xl6"]
 
 [ext_resource type="Script" path="res://props/candle_ligth/candle_ligth.gd" id="1_fpb8o"]
+[ext_resource type="Texture2D" uid="uid://3a85871rjvuk" path="res://props/candle_ligth/flame_02.png" id="2_o263e"]
 
 [sub_resource type="Gradient" id="Gradient_xgmqj"]
 offsets = PackedFloat32Array(0, 0.758621, 1)
-colors = PackedColorArray(1, 0.883647, 0.606939, 1, 0.833169, 0.646698, 0, 1, 0.819608, 0.32549, 0.0352941, 1)
+colors = PackedColorArray(1, 0.883647, 0.606939, 1, 0.833169, 0.646698, 0, 1, 0.94149, 0.618807, 0.0874266, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_udumj"]
 noise_type = 0
@@ -59,17 +60,16 @@ color_ramp = SubResource("GradientTexture1D_x3ivk")
 alpha_curve = SubResource("CurveTexture_irobi")
 emission_curve = SubResource("CurveTexture_p2pal")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c7c2x"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a5ofi"]
 transparency = 1
+blend_mode = 1
 shading_mode = 0
 vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_o263e")
 
-[sub_resource type="SphereMesh" id="SphereMesh_jljw1"]
-material = SubResource("StandardMaterial3D_c7c2x")
-radius = 0.05
-height = 0.1
-radial_segments = 4
-rings = 1
+[sub_resource type="QuadMesh" id="QuadMesh_sdkmo"]
+material = SubResource("StandardMaterial3D_a5ofi")
+size = Vector2(0.2, 0.2)
 
 [node name="CandleLigth" type="Node3D"]
 script = ExtResource("1_fpb8o")
@@ -82,10 +82,11 @@ shadow_enabled = true
 shadow_opacity = 0.87
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="OmniLight3D"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.0117859, 0)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 cast_shadow = 0
 gi_mode = 0
-amount = 100
+amount = 200
 lifetime = 0.5
+transform_align = 1
 process_material = SubResource("ParticleProcessMaterial_6if4r")
-draw_pass_1 = SubResource("SphereMesh_jljw1")
+draw_pass_1 = SubResource("QuadMesh_sdkmo")
