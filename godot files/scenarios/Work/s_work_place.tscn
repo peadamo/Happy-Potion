@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://batkpnl3ou7eq"]
+[gd_scene load_steps=9 format=3 uid="uid://batkpnl3ou7eq"]
 
-[ext_resource type="PackedScene" uid="uid://bf4g6yomdlj13" path="res://ASSETS/3D_MODELS/Alchemy Station/Alchemy Station.glb" id="1_pu2n8"]
-[ext_resource type="PackedScene" uid="uid://btqmhs7q6mfr1" path="res://player/player.tscn" id="2_btklo"]
+[ext_resource type="PackedScene" uid="uid://dx650pp1s0vje" path="res://ASSETS/3D_MODELS/Alchemy Station/alchemy_station.tscn" id="3_q4n1e"]
+[ext_resource type="PackedScene" uid="uid://cb754d6wslvuh" path="res://player/Player.tscn" id="4_23cac"]
 [ext_resource type="PackedScene" uid="uid://dknv4u8ig2xl6" path="res://props/candle_ligth/candle_ligth.tscn" id="4_31dga"]
+[ext_resource type="PackedScene" uid="uid://bql2wxgj8pkn3" path="res://scenarios/Work/Caja_de_ingredientes/ingredients_box.tscn" id="4_715fn"]
 [ext_resource type="AudioStream" uid="uid://dano84376umgh" path="res://ASSETS/sounds/ambience_dungeon.mp3" id="7_b4ga3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_iiyyu"]
@@ -36,18 +37,16 @@ bus = &"Ambienc"
 
 [node name="ligthd" type="Node" parent="."]
 
-[node name="CandleLigth" parent="ligthd" instance=ExtResource("4_31dga")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.478482, 1.03008, 0.131013)
-
-[node name="OmniLight3D" parent="ligthd/CandleLigth" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.433412, 0.561834, 0.372946)
-
 [node name="CandleLigth2" parent="ligthd" instance=ExtResource("4_31dga")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.882307, 1.03359, 0.13256)
 
-[node name="player" parent="." instance=ExtResource("2_btklo")]
+[node name="CandleLigth3" parent="ligthd" instance=ExtResource("4_31dga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.394376, 1.02218, 0.278378)
 
-[node name="Alchemy Station" parent="." instance=ExtResource("1_pu2n8")]
+[node name="Objects" type="Node3D" parent="."]
 
-[editable path="ligthd/CandleLigth"]
-[editable path="player"]
+[node name="Alchemy Station" parent="Objects" instance=ExtResource("3_q4n1e")]
+
+[node name="caja_de_ingredientes" parent="Objects" instance=ExtResource("4_715fn")]
+
+[node name="Player" parent="." instance=ExtResource("4_23cac")]

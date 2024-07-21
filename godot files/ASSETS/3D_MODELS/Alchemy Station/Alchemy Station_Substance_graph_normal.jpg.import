@@ -2,14 +2,14 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnbpma0y0c7ej"
+uid="uid://d0bdr8mbgtgyp"
 path.s3tc="res://.godot/imported/Alchemy Station_Substance_graph_normal.jpg-8963fb52d55e648be97f323abde6071f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "5bb235fad1cc844fb9945feb0397b06e"
+"md5": "947ac472d504a112de7b3bf6573c166d"
 }
 
 [deps]

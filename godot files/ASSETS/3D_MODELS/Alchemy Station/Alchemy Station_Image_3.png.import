@@ -2,14 +2,14 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcyvfqjf5f2lw"
+uid="uid://b01m7c4muq81f"
 path.s3tc="res://.godot/imported/Alchemy Station_Image_3.png-dd52a2712ee520efbbc53e0ac2c7fcf6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "b7ae16214ec6dd510b3b3b4342dba3b0"
+"md5": "cc5f15d99b01542bf02762c8f0c97351"
 }
 
 [deps]

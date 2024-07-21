@@ -12,13 +12,17 @@ config_version=5
 
 config/name="Happy Potion"
 run/main_scene="res://scenarios/Work/s_work_place.tscn"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="res://audio buses/default_bus_layout.tres"
 
 [display]
 
-window/size/viewport_width=864
-window/size/viewport_height=486
+window/size/viewport_width=960
+window/size/viewport_height=540
 window/size/mode=3
 window/stretch/mode="viewport"
 window/stretch/aspect="ignore"
