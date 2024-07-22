@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bi5r6fus4dq4d"]
+
+[ext_resource type="Texture2D" uid="uid://dbb3yb81tf1ob" path="res://ASSETS/3D_MODELS/Alchemy Station/Image_1.006.png" id="1_jqpfo"]
+
+[resource]
+resource_name = "gema.002"
+cull_mode = 2
+albedo_color = Color(1, 1, 1, 0.572549)
+albedo_texture = ExtResource("1_jqpfo")
+metallic_specular = 1.0
+rim = 0.0
+rim_tint = 1.0

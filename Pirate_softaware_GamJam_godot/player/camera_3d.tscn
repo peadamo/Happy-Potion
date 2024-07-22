@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bd5smggydbd8e"]
+
+[ext_resource type="Shader" path="res://level/level.gdshader" id="1_030jw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qc724"]
+render_priority = 0
+shader = ExtResource("1_030jw")
+shader_parameter/color_levels = 16
+
+[sub_resource type="QuadMesh" id="QuadMesh_al3r5"]
+material = SubResource("ShaderMaterial_qc724")
+flip_faces = true
+size = Vector2(2, 2)
+
+[node name="Camera3D" type="Camera3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.72461, 0)
+near = 0.001
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.38482e-08, 0, -0.615952)
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_al3r5")

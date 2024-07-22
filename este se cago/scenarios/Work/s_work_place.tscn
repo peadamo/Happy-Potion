@@ -1,0 +1,71 @@
+[gd_scene load_steps=12 format=3 uid="uid://batkpnl3ou7eq"]
+
+[ext_resource type="PackedScene" uid="uid://dx650pp1s0vje" path="res://ASSETS/3D_MODELS/Alchemy Station/alchemy_station.tscn" id="3_q4n1e"]
+[ext_resource type="PackedScene" uid="uid://cb754d6wslvuh" path="res://player/Player.tscn" id="4_23cac"]
+[ext_resource type="PackedScene" uid="uid://dknv4u8ig2xl6" path="res://props/candle_ligth/candle_ligth.tscn" id="4_31dga"]
+[ext_resource type="PackedScene" uid="uid://bql2wxgj8pkn3" path="res://scenarios/Work/Caja_de_ingredientes/ingredients_box.tscn" id="4_715fn"]
+[ext_resource type="Shader" path="res://player/camera_3d.gdshader" id="6_83o1r"]
+[ext_resource type="AudioStream" uid="uid://dano84376umgh" path="res://ASSETS/sounds/ambience_dungeon.mp3" id="7_b4ga3"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_iiyyu"]
+sky_top_color = Color(0, 0, 0, 1)
+sky_horizon_color = Color(0, 0, 0, 1)
+sky_cover_modulate = Color(0, 0, 0, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Sky" id="Sky_x5b76"]
+sky_material = SubResource("ProceduralSkyMaterial_iiyyu")
+
+[sub_resource type="Environment" id="Environment_cp6np"]
+background_energy_multiplier = 0.0
+sky = SubResource("Sky_x5b76")
+tonemap_mode = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_koclj"]
+render_priority = 0
+shader = ExtResource("6_83o1r")
+shader_parameter/color_levels = 32
+
+[sub_resource type="QuadMesh" id="QuadMesh_ppv4x"]
+material = SubResource("ShaderMaterial_koclj")
+flip_faces = true
+size = Vector2(2, 2)
+
+[node name="S_Work_place" type="Node3D"]
+
+[node name="enviroment" type="Node" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="enviroment"]
+environment = SubResource("Environment_cp6np")
+
+[node name="sounds" type="Node" parent="."]
+
+[node name="ambience" type="AudioStreamPlayer" parent="sounds"]
+stream = ExtResource("7_b4ga3")
+autoplay = true
+bus = &"Ambienc"
+
+[node name="ligthd" type="Node" parent="."]
+
+[node name="CandleLigth2" parent="ligthd" instance=ExtResource("4_31dga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.882307, 1.03359, 0.13256)
+
+[node name="CandleLigth3" parent="ligthd" instance=ExtResource("4_31dga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.394376, 1.02218, 0.278378)
+
+[node name="Objects" type="Node3D" parent="."]
+
+[node name="Alchemy Station" parent="Objects" instance=ExtResource("3_q4n1e")]
+
+[node name="caja_de_ingredientes" parent="Objects" instance=ExtResource("4_715fn")]
+
+[node name="Player" parent="." instance=ExtResource("4_23cac")]
+
+[node name="MeshInstance3D" parent="Player/player/player/Skeleton3D/BoneAttachment3D/Camera3D2" index="2"]
+transform = Transform3D(1, 1.69407e-20, 0, 1.69407e-20, 1, 0, 0, 0, 1, -2.1596e-05, 7.86781e-06, 0.33602)
+mesh = SubResource("QuadMesh_ppv4x")
+
+[editable path="Player"]
+[editable path="Player/player"]
+[editable path="Player/player/player/Skeleton3D/BoneAttachment3D/Camera3D2"]
