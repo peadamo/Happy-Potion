@@ -2,15 +2,13 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca6wntrpgstp3"
+uid="uid://c0xnla0q6ewnc"
 path.s3tc="res://.godot/imported/room_wood-90_diffuse.jpg-9aaa016076edbde900ce1e2d2384a3f9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "6be0e105a7dff34e0c8b426221ac2faa"
-}
+generator_parameters={}
 
 [deps]
 

@@ -2,15 +2,13 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ep4f45c8h3hd"
+uid="uid://b7j2a1e6nilf5"
 path.s3tc="res://.godot/imported/room_Clay_rough_BaseColor.png-d870ea8c33859af0cbd8709b6581a7d9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "3f24e23f4a4032b9de6846c7c4a01485"
-}
+generator_parameters={}
 
 [deps]
 

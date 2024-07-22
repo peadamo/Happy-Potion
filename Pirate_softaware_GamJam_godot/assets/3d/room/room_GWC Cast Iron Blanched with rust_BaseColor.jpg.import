@@ -2,15 +2,13 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doe358oocjetb"
+uid="uid://cnucrfndr4wnt"
 path.s3tc="res://.godot/imported/room_GWC Cast Iron Blanched with rust_BaseColor.jpg-53b4e2522797ea4df31383206e876737.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "7b6fdeb24b1420b87cd9ef1ca3e6d0c6"
-}
+generator_parameters={}
 
 [deps]
 

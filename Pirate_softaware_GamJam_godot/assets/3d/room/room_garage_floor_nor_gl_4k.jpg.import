@@ -2,15 +2,13 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cf05mj1pgvm6s"
+uid="uid://dkxs2op6u5h0e"
 path.s3tc="res://.godot/imported/room_garage_floor_nor_gl_4k.jpg-825f8015c1d4059323fad1285adcde3f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "5ad6b089667dd16574672ecacc5fa037"
-}
+generator_parameters={}
 
 [deps]
 

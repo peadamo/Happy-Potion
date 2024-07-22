@@ -2,15 +2,13 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbbfti2l6vhq3"
+uid="uid://cr5l8genkei3o"
 path.s3tc="res://.godot/imported/room_lavanda.png-50e413999a1fd7461f29cbb0632290f1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "a6f01d248aee1dd481dadce46fc84f24"
-}
+generator_parameters={}
 
 [deps]
 

@@ -2,15 +2,13 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbvt6mr6yspun"
+uid="uid://ghgtm4gj7coy"
 path.s3tc="res://.godot/imported/room_Clay004_2K_Color.jpg-f1b5a65fa97693f6fcb96522b9cd664f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "e8778d5a0eb07d8b595f2d8cb463aa28"
-}
+generator_parameters={}
 
 [deps]
 

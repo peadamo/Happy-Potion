@@ -2,15 +2,13 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmfkobdsacnyn"
+uid="uid://b4ino1eb730x6"
 path.s3tc="res://.godot/imported/room_Cork_Normal.jpg-02725500e6942a57f37498a88934f61d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "03cd18475a71aff35698fad06140d867"
-}
+generator_parameters={}
 
 [deps]
 

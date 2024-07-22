@@ -2,15 +2,13 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4vstin4g5hlh"
+uid="uid://dqiogaawjodq4"
 path.s3tc="res://.godot/imported/room_Stone_wall_basecolor.png-ce6108e6dda3c68b553f202ef3a1cdf3.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "f27764e064baf5c83a95273c00adf384"
-}
+generator_parameters={}
 
 [deps]
 

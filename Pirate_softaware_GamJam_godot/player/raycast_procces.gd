@@ -12,20 +12,46 @@ func _process(delta):
 	gui_controller.update_raycast_label(ray_col)
 	
 	if ray_col != null:
-		if ray_col.interactive:
+		if ray_col.ingridient_box:
 			gui_controller.change_cross_image("hand_pick")
 	else:
 		gui_controller.change_cross_image("default")
 
 
+
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == 1 and event.pressed:
-			pick_box_object_1()
+			procces_interaction_request()
 			
 			
-const GEMA_VIOLETA_ENTERA = preload("res://assets/3d/ingridients/gema_violeta_entera.glb")			
-func pick_box_object_1():
-	animation_controller.pick_box_object_1()
+			
+			
+var left_hand_free = true
+var left_hand_object = null
+var rigth_hand_free = true
+var rigth_hand_object = null
+
+			
+func procces_interaction_request():
 	
-	left_hand.add_child(GEMA_VIOLETA_ENTERA.instantiate())
+	if ray_col != null:
+		if ray_col.interactive:
+			if ray_col.ingridient_box:
+				pick_box_object_left(ray_col.pick_box_index)
+			
+
+
+
+
+
+func pick_box_object_left(box_index):
+	ray_col.waiting_hand = true
+	ray_col.hand_node = left_hand
+	
+	animation_controller.pick_box_object_left(box_index)
+	
+	#left_hand.add_child(GEMA_VIOLETA_ENTERA.instantiate())
+
+
+

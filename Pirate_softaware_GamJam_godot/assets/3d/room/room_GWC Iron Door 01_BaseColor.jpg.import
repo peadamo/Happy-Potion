@@ -2,15 +2,13 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvhorvj07b4ot"
+uid="uid://c1ntkku10mhr6"
 path.s3tc="res://.godot/imported/room_GWC Iron Door 01_BaseColor.jpg-1de88686d4df657daebedb54546bc602.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "09786487c88c700a454eaa943bcfd1ca"
-}
+generator_parameters={}
 
 [deps]
 

@@ -2,15 +2,13 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqvdyjah3ntpv"
+uid="uid://b87bdt8ou34bc"
 path.s3tc="res://.godot/imported/room_Old wooden board _BaseColor.jpg-1ac87a1e03ed80a9ef6c06f20fabc416.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "fe1289d3e81fc66ce7c631887291bb80"
-}
+generator_parameters={}
 
 [deps]
 

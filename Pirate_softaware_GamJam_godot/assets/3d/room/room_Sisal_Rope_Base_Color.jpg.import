@@ -2,15 +2,13 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv68rs1xw54g4"
+uid="uid://coxvqmedrdnjv"
 path.s3tc="res://.godot/imported/room_Sisal_Rope_Base_Color.jpg-1730099f6faf339936abe0c50738f3e2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "2dd0219615d41a43ec14580ab2ee85fe"
-}
+generator_parameters={}
 
 [deps]
 

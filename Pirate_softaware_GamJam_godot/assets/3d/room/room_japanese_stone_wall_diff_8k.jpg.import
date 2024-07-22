@@ -2,15 +2,13 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cb8rw5ecdm1d2"
+uid="uid://dt41cpo4j4hxj"
 path.s3tc="res://.godot/imported/room_japanese_stone_wall_diff_8k.jpg-a659be23c28f8e7a3806b6acca9c7768.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "41b9254d33553ea6c8ef308e5627bb46"
-}
+generator_parameters={}
 
 [deps]
 

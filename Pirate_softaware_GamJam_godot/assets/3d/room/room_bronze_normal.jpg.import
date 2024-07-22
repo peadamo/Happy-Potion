@@ -2,15 +2,13 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cao4bbtha1oag"
+uid="uid://bjvn5l3wtx57y"
 path.s3tc="res://.godot/imported/room_bronze_normal.jpg-1b3ff711639fcf947eea9e7e7a417015.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "0fa6270876c30d8e27d74dcb52048e9f"
-}
+generator_parameters={}
 
 [deps]
 

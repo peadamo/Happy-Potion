@@ -1,10 +1,5 @@
-[gd_scene load_steps=3 format=3 uid="uid://bpaju8jpwyss5"]
+[gd_scene load_steps=2 format=3 uid="uid://hhydvauioj3"]
 
-[ext_resource type="PackedScene" uid="uid://dsv7cv5b5m651" path="res://assets/3d/room/room.glb" id="1_usfyc"]
-[ext_resource type="Script" path="res://assets/3d/room/room.gd" id="2_bkerf"]
+[ext_resource type="PackedScene" uid="uid://28ubfcwfbi54" path="res://assets/3d/room/room.glb" id="2_bkerf"]
 
-[node name="room" instance=ExtResource("1_usfyc")]
-script = ExtResource("2_bkerf")
-
-[node name="Cube_010" parent="." index="7"]
-visible = false
+[node name="room" instance=ExtResource("2_bkerf")]
