@@ -1,0 +1,99 @@
+[gd_scene load_steps=10 format=3 uid="uid://boqi5p1eqlgw0"]
+
+[ext_resource type="Script" path="res://props/rain/rain.gd" id="1_2nghp"]
+[ext_resource type="Texture2D" uid="uid://4visiwqw0j2r" path="res://props/rain/muzzle_04.png" id="1_eveen"]
+[ext_resource type="AudioStream" uid="uid://bfjwlu0px08mh" path="res://props/rain/rain_sound.mp3" id="2_w6ycq"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_usxmf"]
+emission_shape_scale = Vector3(0.1, 0, 0.4)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+scale_min = 0.05
+scale_max = 0.05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e6b08"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_eveen")
+
+[sub_resource type="QuadMesh" id="QuadMesh_lsiwy"]
+material = SubResource("StandardMaterial3D_e6b08")
+
+[sub_resource type="Animation" id="Animation_eubjn"]
+resource_name = "go_rain"
+length = 80.0
+loop_mode = 1
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("rain_player")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_w6ycq")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OmniLight3D:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4.9, 5, 5.3, 28.7, 28.8, 29.1, 53.3, 53.4, 53.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0.0, 0.0, 7.5, 0.0, 0.0, 7.5, 0.0, 0.0, 5.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_j8jm5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OmniLight3D:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0jcno"]
+_data = {
+"RESET": SubResource("Animation_j8jm5"),
+"go_rain": SubResource("Animation_eubjn")
+}
+
+[node name="Rain" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37389, 2.20402, -0.297936)
+script = ExtResource("1_2nghp")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+amount = 200
+lifetime = 0.5
+visibility_aabb = AABB(-0.248558, -1.19862, -0.910582, 0.497116, 2.39724, 1.82116)
+transform_align = 1
+process_material = SubResource("ParticleProcessMaterial_usxmf")
+draw_pass_1 = SubResource("QuadMesh_lsiwy")
+
+[node name="rain_player" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.786084, 0, 0.908391)
+
+[node name="rain_anim_player" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0jcno")
+}
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.12771, -1.53733, 0)
+light_color = Color(0.763684, 0.933136, 1, 1)
+light_energy = 0.0
+omni_range = 9.34678

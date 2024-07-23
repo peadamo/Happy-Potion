@@ -1,5 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://hhydvauioj3"]
+[gd_scene load_steps=3 format=3 uid="uid://hhydvauioj3"]
 
 [ext_resource type="PackedScene" uid="uid://28ubfcwfbi54" path="res://assets/3d/room/room.glb" id="2_bkerf"]
+[ext_resource type="PackedScene" uid="uid://boqi5p1eqlgw0" path="res://props/rain/rain.tscn" id="2_cpjkd"]
 
 [node name="room" instance=ExtResource("2_bkerf")]
+
+[node name="Rain" parent="." index="36" instance=ExtResource("2_cpjkd")]

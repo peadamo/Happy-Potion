@@ -2,6 +2,7 @@ extends Area3D
 
 @export var interactive : bool = false
 @export var ingridient_box : bool = false
+@export var pestle : bool = false
 @export var pick_box_index :int = 0
 @export var preferred_hand_left : bool = false
 @export var preferred_hand_rigth : bool = false
