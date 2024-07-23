@@ -5,6 +5,7 @@ extends Area3D
 @export var pick_box_index :int = 0
 @export var preferred_hand_left : bool = false
 @export var preferred_hand_rigth : bool = false
+var player_gui_controller
 var hand_node
 var waiting_hand = false
 
@@ -14,6 +15,7 @@ func _on_area_entered(area):
 			waiting_hand=false
 			print("ingridient slot: ",pick_box_index," - se recoje objeto")
 			hand_node.add_child(load(ingridients_model[pick_box_index]).instantiate())
+			player_gui_controller.set_info_label_text("Press key X to discard item")
 
 
 var ingridients_model : Array =[

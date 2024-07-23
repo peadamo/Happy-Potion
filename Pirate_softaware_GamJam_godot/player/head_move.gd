@@ -25,7 +25,7 @@ func _process(delta):
 	
 	
 	
-	var head_total_rotation = rad_to_deg(head_rotation.rotation.y)
-	print(head_total_rotation)
-	
-	player.rotation.y = head_total_rotation
+	#var head_total_rotation = rad_to_deg(head_rotation.rotation.y)
+	#print(head_total_rotation)
+	#
+	#player.rotation.y = head_total_rotation

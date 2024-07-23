@@ -2,7 +2,9 @@ extends Node
 
 @onready var animation_tree : AnimationTree = $"../../AnimationTree"
 var idle_animation_node
+var next_idle_anim = "Sit_pose_idle"
 var one_shot_animation_node
+@onready var idle_anim_delay = $idle_anim_delay
 
 func _ready():
 	idle_animation_node = animation_tree.tree_root.get_node("Idle_animation")
@@ -30,12 +32,24 @@ func pick_box_object_left(box_index):
 		can_shot_anim=false
 		one_shot_animation_node.animation = pick_box_left_hand_animations[box_index]
 		animation_tree.set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
-		set_idle_pose_left_hand()
+		next_idle_anim = "Sit_pose_idle_left_hand"
+		idle_anim_delay.start()
+		
 	
-func set_idle_pose_left_hand():
-	idle_animation_node.animation = "Sit_pose_idle_left"
 
+	
+
+func lunch_anima_discard_object_in_left_hand():
+	one_shot_animation_node.animation = "Action_discard_object_in_left_hand"
+	animation_tree.set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
+	next_idle_anim = "Sit_pose_idle"
+	idle_anim_delay.start()
+	
 
 func _on_animation_tree_animation_finished(anim_name):
 	can_shot_anim = true
 	print(anim_name)
+
+
+func _on_idle_anim_delay_timeout():
+	idle_animation_node.animation = next_idle_anim
