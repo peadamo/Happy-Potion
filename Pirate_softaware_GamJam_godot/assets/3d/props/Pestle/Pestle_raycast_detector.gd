@@ -5,6 +5,7 @@ extends Area3D
 @export var pestle : bool = false
 @onready var pestle_mesh = $".."
 @onready var pestle_raycast_detector : Area3D = $"."
+@export var pestle_put_dowm_area : bool = false
 func _ready():
 	if active == false:
 		print("hide pestle")
@@ -17,6 +18,8 @@ func _ready():
 func make_visible():
 	pestle_mesh.visible= true
 
+func make_not_visible():
+	pestle_mesh.visible= false
 
 func set_pestle_no_active():
 		active = false
@@ -27,3 +30,5 @@ func set_pestle_si_active():
 		active = true
 		pestle_mesh.visible= true
 		pestle_raycast_detector.set_collision_layer_value(1,true)
+
+

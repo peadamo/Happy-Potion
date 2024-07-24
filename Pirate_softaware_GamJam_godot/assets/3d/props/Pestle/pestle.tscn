@@ -10,6 +10,7 @@ radius = 0.0381295
 [node name="pestle" instance=ExtResource("1_ygxfd")]
 
 [node name="Pestle_raycast_detector" type="Area3D" parent="." index="1"]
+collision_layer = 3
 script = ExtResource("2_cvu4n")
 interactive = true
 pestle = true

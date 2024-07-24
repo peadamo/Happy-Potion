@@ -4,6 +4,7 @@ extends Area3D
 @export var ingridient_box : bool = false
 @export var pestle : bool = false
 @export var pick_box_index :int = 0
+@export var pestle_put_dowm_area : bool = false
 @export var preferred_hand_left : bool = false
 @export var preferred_hand_rigth : bool = false
 var player_gui_controller

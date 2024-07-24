@@ -14,8 +14,10 @@ func _process(delta):
 	if ray_col != null:
 		if ray_col.ingridient_box:
 			gui_controller.change_cross_image("hand_pick")
-		if ray_col.pestle:
+		elif ray_col.pestle:
 			gui_controller.change_cross_image("hand_pick")
+		elif ray_col.pestle_put_dowm_area:
+			gui_controller.change_cross_image("put_in")
 	else:
 		gui_controller.change_cross_image("default")
 
@@ -48,9 +50,10 @@ func procces_interaction_request():
 		if ray_col.interactive:
 			if ray_col.ingridient_box:
 				pick_box_object_left(ray_col.pick_box_index)
-			if ray_col.pestle:
+			elif ray_col.pestle:
 				pick_up_pestle()
-			
+			elif ray_col.pestle_put_dowm_area:
+				put_down_pestle()
 
 @onready var pestle = $"../../player/Skeleton3D/Right_hand_Attach/rigth_hand/pestle"
 
@@ -58,6 +61,10 @@ func pick_up_pestle():
 	print("levanto el pestle")
 	animation_controller.pick_up_pestle()
 	
+	
+func put_down_pestle():
+	print("se gusrdo el pestle")
+	animation_controller.put_down_pestle()
 
 func pick_box_object_left(box_index):
 	ray_col.waiting_hand = true
