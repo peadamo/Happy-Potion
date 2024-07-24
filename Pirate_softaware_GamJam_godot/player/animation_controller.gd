@@ -59,5 +59,7 @@ func _on_idle_anim_delay_timeout():
 func pick_up_pestle():
 	one_shot_animation_node.animation = "Action_pick_up_pestle"
 	animation_tree.set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
-	next_idle_anim = "Action_pick_up_pestle"
-	idle_anim_delay.start()
+	animation_tree.set("parameters/Blend_idle_rigth_arm/blend_amount",1.0)
+	
+	#next_idle_anim = "Action_pick_up_pestle"
+	#idle_anim_delay.start()

@@ -52,6 +52,7 @@ func procces_interaction_request():
 				pick_up_pestle()
 			
 
+@onready var pestle = $"../../player/Skeleton3D/Right_hand_Attach/rigth_hand/pestle"
 
 func pick_up_pestle():
 	print("levanto el pestle")

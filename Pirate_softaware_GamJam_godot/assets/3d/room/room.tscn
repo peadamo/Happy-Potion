@@ -1,8 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://hhydvauioj3"]
+[gd_scene load_steps=4 format=3 uid="uid://hhydvauioj3"]
 
 [ext_resource type="PackedScene" uid="uid://28ubfcwfbi54" path="res://assets/3d/room/room.glb" id="2_bkerf"]
 [ext_resource type="PackedScene" uid="uid://boqi5p1eqlgw0" path="res://props/rain/rain.tscn" id="2_cpjkd"]
+[ext_resource type="Script" path="res://assets/3d/room/room.gd" id="2_txh5f"]
 
 [node name="room" instance=ExtResource("2_bkerf")]
+script = ExtResource("2_txh5f")
+
+[node name="Cube_010" parent="." index="7"]
+visible = false
+
+[node name="REF_borrar" parent="." index="17"]
+visible = false
 
 [node name="Rain" parent="." index="36" instance=ExtResource("2_cpjkd")]
