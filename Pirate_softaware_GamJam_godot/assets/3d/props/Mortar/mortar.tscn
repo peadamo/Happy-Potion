@@ -1,0 +1,67 @@
+[gd_scene load_steps=16 format=3 uid="uid://p3n4746jyawm"]
+
+[ext_resource type="PackedScene" uid="uid://dgbxbp1t05xgo" path="res://assets/3d/props/Mortar/mortar.glb" id="1_yoo0m"]
+[ext_resource type="Script" path="res://assets/3d/props/Mortar/mortar.gd" id="2_ibpg2"]
+[ext_resource type="PackedScene" uid="uid://c01clnunuud27" path="res://assets/3d/ingridients/01_ING_mushroom_morcilla.glb" id="3_j63p4"]
+[ext_resource type="PackedScene" uid="uid://d2sa83rwmydm5" path="res://assets/3d/ingridients/00_ING_gem_purple.glb" id="4_6gsu1"]
+[ext_resource type="PackedScene" uid="uid://c3ak5ax80k2hx" path="res://assets/3d/ingridients/02_ING_mushroom_Liberty Cap.glb" id="5_8jj3k"]
+[ext_resource type="PackedScene" uid="uid://2tptwbmv5k2f" path="res://assets/3d/ingridients/03_ING_trunpetflower.glb" id="6_1ho34"]
+[ext_resource type="PackedScene" uid="uid://dk5cmxcqd07ay" path="res://assets/3d/ingridients/04_ING_mushroom_death_trumpet.glb" id="7_24xb6"]
+[ext_resource type="PackedScene" uid="uid://c7w1rajfpk3r4" path="res://assets/3d/ingridients/05_ING_gem_blue.glb" id="8_4xrk8"]
+[ext_resource type="PackedScene" uid="uid://doqlxcfxowps1" path="res://assets/3d/ingridients/07_ING_bird_head.glb" id="9_igtk8"]
+[ext_resource type="PackedScene" uid="uid://dkdh2prhgq5x0" path="res://assets/3d/ingridients/08_ING_mushroom_earthball.glb" id="10_kt5ro"]
+[ext_resource type="PackedScene" uid="uid://c46jav61wr01k" path="res://assets/3d/ingridients/09_ING_gem_green.glb" id="11_bicie"]
+[ext_resource type="PackedScene" uid="uid://67qmj1nswihh" path="res://assets/3d/ingridients/10_ING_mushroom_porcini.glb" id="12_2fsmo"]
+[ext_resource type="PackedScene" uid="uid://sckg8oad0sot" path="res://assets/3d/ingridients/11_ING_mushroom_puff.glb" id="13_wo0r2"]
+[ext_resource type="PackedScene" uid="uid://k1o8oehpbnar" path="res://assets/3d/ingridients/13_ING_gem_red.glb" id="14_wl142"]
+[ext_resource type="PackedScene" uid="uid://xosu44rdw565" path="res://assets/3d/ingridients/14_ING_seashell.glb" id="15_7numb"]
+
+[node name="mortar" instance=ExtResource("1_yoo0m")]
+script = ExtResource("2_ibpg2")
+
+[node name="ingridients" type="Node3D" parent="." index="1"]
+
+[node name="ingridient_position" type="Marker3D" parent="ingridients" index="0"]
+transform = Transform3D(0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, 0.0438847, 0.0363223, 0)
+
+[node name="01_ING_mushroom_morcilla2" parent="ingridients/ingridient_position" index="0" instance=ExtResource("3_j63p4")]
+visible = false
+
+[node name="00_ING_gem_purple2" parent="ingridients/ingridient_position" index="1" instance=ExtResource("4_6gsu1")]
+visible = false
+
+[node name="01_ING_mushroom_morcilla3" parent="ingridients/ingridient_position" index="2" instance=ExtResource("3_j63p4")]
+visible = false
+
+[node name="02_ING_mushroom_Liberty Cap2" parent="ingridients/ingridient_position" index="3" instance=ExtResource("5_8jj3k")]
+visible = false
+
+[node name="03_ING_trunpetflower2" parent="ingridients/ingridient_position" index="4" instance=ExtResource("6_1ho34")]
+visible = false
+
+[node name="04_ING_mushroom_death_trumpet2" parent="ingridients/ingridient_position" index="5" instance=ExtResource("7_24xb6")]
+visible = false
+
+[node name="05_ING_gem_blue2" parent="ingridients/ingridient_position" index="6" instance=ExtResource("8_4xrk8")]
+visible = false
+
+[node name="07_ING_bird_head2" parent="ingridients/ingridient_position" index="7" instance=ExtResource("9_igtk8")]
+visible = false
+
+[node name="08_ING_mushroom_earthball2" parent="ingridients/ingridient_position" index="8" instance=ExtResource("10_kt5ro")]
+visible = false
+
+[node name="09_ING_gem_green2" parent="ingridients/ingridient_position" index="9" instance=ExtResource("11_bicie")]
+visible = false
+
+[node name="10_ING_mushroom_porcini2" parent="ingridients/ingridient_position" index="10" instance=ExtResource("12_2fsmo")]
+visible = false
+
+[node name="11_ING_mushroom_puff2" parent="ingridients/ingridient_position" index="11" instance=ExtResource("13_wo0r2")]
+visible = false
+
+[node name="13_ING_gem_red2" parent="ingridients/ingridient_position" index="12" instance=ExtResource("14_wl142")]
+visible = false
+
+[node name="14_ING_seashell2" parent="ingridients/ingridient_position" index="13" instance=ExtResource("15_7numb")]
+visible = false

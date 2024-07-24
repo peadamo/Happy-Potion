@@ -88,3 +88,20 @@ func put_down_pestle():
 
 	rigth_hand_active=false
 	procces_sit_idle_pose()
+
+
+func put_ingridient_in_mortar_with_pestle():
+	one_shot_animation_node.play_mode = 0
+	one_shot_animation_node.animation = "Action_put_ingridient_in_mortar_pestle_in_hand"
+	animation_tree.set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
+	
+	left_hand_active=false
+	procces_sit_idle_pose()
+	
+func put_ingridient_in_mortar():
+	one_shot_animation_node.play_mode = 0
+	one_shot_animation_node.animation = "Action_put_ingridient_in_mortar"
+	animation_tree.set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
+	
+	left_hand_active=false
+	procces_sit_idle_pose()

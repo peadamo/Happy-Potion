@@ -5,7 +5,7 @@ extends Area3D
 @export var ingridient_box : bool = false
 @export var pestle : bool = false
 @export var pestle_put_dowm_area : bool = false
-
+@export var mortar : bool = false
 
 func turn_on():
 	pestle_put_down_area.set_collision_layer_value(1,true)

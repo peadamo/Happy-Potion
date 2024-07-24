@@ -7,6 +7,7 @@ func update_raycast_label(new_text):
 const CROSSHAIR_117 = preload("res://GUI/mouse_icons/crosshair117.png")
 const HAND_THIN_OPEN = preload("res://GUI/mouse_icons/hand_thin_open.png")
 const PUT_IN = preload("res://GUI/mouse_icons/download.png")
+const MORTAR = preload("res://GUI/mouse_icons/mortar.png")
 @onready var cross = $"../../player/Skeleton3D/BoneAttachment3D/Camera3D/Control/cross"
 @onready var low_left_corner_label = $"../../player/Skeleton3D/BoneAttachment3D/Camera3D/Control/Low_left_corner_label"
 
@@ -23,6 +24,7 @@ func change_cross_image(new_image : String):
 			image_to_load = HAND_THIN_OPEN
 		"put_in":
 			image_to_load = PUT_IN
-			
+		"smash":
+			image_to_load = MORTAR
 			
 	cross.texture = image_to_load
