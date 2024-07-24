@@ -4,6 +4,7 @@ extends Node
 var idle_animation_node
 var next_idle_anim = "Sit_pose_idle"
 var one_shot_animation_node
+
 @onready var idle_anim_delay = $idle_anim_delay
 
 func _ready():
@@ -32,40 +33,58 @@ func pick_box_object_left(box_index):
 		can_shot_anim=false
 		one_shot_animation_node.animation = pick_box_left_hand_animations[box_index]
 		animation_tree.set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
-		next_idle_anim = "Sit_pose_idle_left_hand"
-		idle_anim_delay.start()
+		left_hand_active=true
+		procces_sit_idle_pose()
 		
-	
-
-	
+var left_hand_active = false
+var rigth_hand_active = false
+func procces_sit_idle_pose():
+	if left_hand_active and rigth_hand_active:
+		next_idle_anim = "Sit_pose_idle_both_hand"
+	if left_hand_active and !rigth_hand_active:
+		next_idle_anim = "Sit_pose_idle_left_hand"
+	if !left_hand_active and rigth_hand_active:
+		next_idle_anim = "Sit_pose_idle_rigth_hand"
+	if !left_hand_active and !rigth_hand_active:
+		next_idle_anim = "Sit_pose_idle"
+		
+	idle_anim_delay.start()
+		
+		
 
 func lunch_anima_discard_object_in_left_hand():
 	one_shot_animation_node.play_mode = 0
 	
 	one_shot_animation_node.animation = "Action_discard_object_in_left_hand"
 	animation_tree.set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
-	next_idle_anim = "Sit_pose_idle"
-	idle_anim_delay.start()
+	left_hand_active=false
+	procces_sit_idle_pose()
 	
 
 func _on_animation_tree_animation_finished(anim_name):
 	can_shot_anim = true
-	print(anim_name)
 
 
 func _on_idle_anim_delay_timeout():
+	print("# Animation_controller: - seteo la idle animation : ",next_idle_anim)
 	idle_animation_node.animation = next_idle_anim
 	
 	
 	
 func pick_up_pestle():
+
 	one_shot_animation_node.play_mode = 0
 	one_shot_animation_node.animation = "Action_pick_up_pestle"
 	animation_tree.set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
-	animation_tree.set("parameters/Blend_idle_rigth_arm/blend_amount",1.0)
+	
+	rigth_hand_active=true
+	procces_sit_idle_pose()
 	
 func put_down_pestle():
+
 	one_shot_animation_node.play_mode = 1
 	one_shot_animation_node.animation = "Action_pick_up_pestle"
 	animation_tree.set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
-	animation_tree.set("parameters/Blend_idle_rigth_arm/blend_amount",0.0)
+
+	rigth_hand_active=false
+	procces_sit_idle_pose()

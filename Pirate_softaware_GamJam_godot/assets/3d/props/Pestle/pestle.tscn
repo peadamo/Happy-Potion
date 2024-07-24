@@ -1,16 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://cavyhut8uuhlr"]
+[gd_scene load_steps=5 format=3 uid="uid://cavyhut8uuhlr"]
 
 [ext_resource type="PackedScene" uid="uid://c7vmxjb2g3m38" path="res://assets/3d/props/Pestle/pestle.glb" id="1_ygxfd"]
 [ext_resource type="Script" path="res://assets/3d/props/Pestle/Pestle_raycast_detector.gd" id="2_cvu4n"]
+[ext_resource type="Script" path="res://assets/3d/props/Pestle/pestle.gd" id="2_x00qh"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_bwu2x"]
 height = 0.163627
 radius = 0.0381295
 
 [node name="pestle" instance=ExtResource("1_ygxfd")]
+script = ExtResource("2_x00qh")
 
 [node name="Pestle_raycast_detector" type="Area3D" parent="." index="1"]
-collision_layer = 3
 script = ExtResource("2_cvu4n")
 interactive = true
 pestle = true
