@@ -1,10 +1,9 @@
 extends Node3D
-@onready var areas_controllet = $scripts/areas_controllet
+@onready var jarra_azul_ray_detector = $jarra_azul_ray_detector
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$player/player/Skeleton3D/BoneAttachment3D/Camera3D/sahder.visible=true
 	pass # Replace with function body.
 
 

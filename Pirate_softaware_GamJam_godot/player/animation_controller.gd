@@ -125,3 +125,11 @@ func lunch_anim_JarraAzul_pickup():
 	
 	next_idle_anim = "jarra_azul_idle_pose"
 	idle_anim_delay.start()
+
+func lunch_anim_JarraAzul_put_down():
+	one_shot_animation_node.play_mode = 1
+	one_shot_animation_node.animation = "jarra_azul_pick_up"
+	animation_tree.set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
+	
+	next_idle_anim = "Sit_pose_idle"
+	idle_anim_delay.start()

@@ -22,6 +22,8 @@ func _process(_delta):
 			procces_mortar_icon()
 		elif ray_col.is_in_group("jarra_azul"):
 			procces_jarra_azul_icon()
+		elif ray_col.is_in_group("jarra_Azul_put_down_area"):
+			gui_controller.change_cross_image("put_in")
 	else:
 		gui_controller.change_cross_image("default")
 
@@ -64,7 +66,8 @@ func procces_interaction_request():
 			mortar_procces_interaction()
 		elif ray_col.is_in_group("jarra_azul"):
 			jarra_azul_procces_interaction()
-
+		elif ray_col.is_in_group("jarra_Azul_put_down_area"):
+			jarra_azul_put_down()
 
 #region jarra_azul
 var jarra_azul_action = null
@@ -76,11 +79,41 @@ func procces_jarra_azul_icon():
 		gui_controller.change_cross_image("default")
 		jarra_azul_action = null
 		
+var animation_pick_jarraAzul = true
 func jarra_azul_procces_interaction():
 	if jarra_azul_action == "pick_up":
+		animation_pick_jarraAzul = true
 		animation_controller.lunch_anim_JarraAzul_pickup()
+		
+func jarra_azul_put_down():
+	animation_pick_jarraAzul = false
+	
+	animation_controller.lunch_anim_JarraAzul_put_down()
+	
+@export var jarra_azul_in_table : Node3D
+@onready var jarra_azul_in_hand = $"../../player/Skeleton3D/Right_hand_Attach/marker_blue_jar/jarra_azul2"
 
-
+func procces_jarraAzul_pick_drop_action():
+	if animation_pick_jarraAzul:
+		print("pick_jarra_azul")
+		rigth_hand_object = "jarra_azul"
+		left_hand_object = "jarra_azul"
+		
+		jarra_azul_in_table.jarra_azul_ray_detector.make_visible_false()
+		jarra_azul_in_table.jarra_azul_ray_detector.set_area_active(false)
+		
+		jarra_azul_in_hand.jarra_azul_ray_detector.make_visible_true()
+		level_areas_controller.on_off_area_jarra_azul_put_down_area(true)
+	else :
+		print("drop_jarra_azul")
+		rigth_hand_object = null
+		left_hand_object = null
+		
+		jarra_azul_in_table.jarra_azul_ray_detector.make_visible_true()
+		jarra_azul_in_table.jarra_azul_ray_detector.set_area_active(true)
+		
+		jarra_azul_in_hand.jarra_azul_ray_detector.make_visible_false()
+		level_areas_controller.on_off_area_jarra_azul_put_down_area(false)
 #endregion
 
 

@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://cu662oe1elvlr"]
+[gd_scene load_steps=5 format=3 uid="uid://cu662oe1elvlr"]
 
 [ext_resource type="PackedScene" uid="uid://xc7my5v0qdnj" path="res://assets/3d/props/jarras/jarra_azul.glb" id="1_8ur6y"]
 [ext_resource type="Script" path="res://assets/3d/props/jarras/jarra_azul_ray_detector.gd" id="2_a7hy8"]
+[ext_resource type="Script" path="res://assets/3d/props/jarras/jarra_azul.gd" id="2_cci4a"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_d0pxo"]
 height = 0.239859
 radius = 0.0913842
 
 [node name="jarra_azul" instance=ExtResource("1_8ur6y")]
+script = ExtResource("2_cci4a")
 
 [node name="jarra_azul_ray_detector" type="Area3D" parent="." index="1" groups=["jarra_azul"]]
 script = ExtResource("2_a7hy8")
