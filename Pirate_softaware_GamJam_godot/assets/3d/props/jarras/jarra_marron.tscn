@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dx4l7af1uyceq"]
+
+[ext_resource type="PackedScene" uid="uid://bqgsnag8mjbia" path="res://assets/3d/props/jarras/jarra_marron.glb" id="1_nmvgv"]
+
+[node name="jarra_marron" instance=ExtResource("1_nmvgv")]

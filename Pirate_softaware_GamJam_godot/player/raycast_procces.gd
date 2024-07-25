@@ -7,19 +7,21 @@ extends Node
 var ray_col = null
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	ray_col = ray_cast_3d.get_collider()
 	gui_controller.update_raycast_label(ray_col)
 	
 	if ray_col != null:
-		if ray_col.ingridient_box:
+		if ray_col.is_in_group("ingridient_box"):
 			gui_controller.change_cross_image("hand_pick")
-		elif ray_col.pestle:
+		elif ray_col.is_in_group("pestle"):
 			gui_controller.change_cross_image("hand_pick")
-		elif ray_col.pestle_put_dowm_area:
+		elif ray_col.is_in_group("pestle_put_dowm_area"):
 			gui_controller.change_cross_image("put_in")
-		elif ray_col.mortar:
+		elif ray_col.is_in_group("mortar"):
 			procces_mortar_icon()
+		elif ray_col.is_in_group("jarra_azul"):
+			procces_jarra_azul_icon()
 	else:
 		gui_controller.change_cross_image("default")
 
@@ -52,16 +54,34 @@ var ingridient_in_hand = null
 func procces_interaction_request():
 	
 	if ray_col != null:
-		if ray_col.interactive:
-			if ray_col.ingridient_box:
-				pick_box_object_left(ray_col.pick_box_index)
-			elif ray_col.pestle:
-				start_Action_pick_up_pestle()
-			elif ray_col.pestle_put_dowm_area:
-				start_Action_put_down_pestle()
-			elif ray_col.mortar:
-				mortar_procces_interaction()
-				
+		if ray_col.is_in_group("ingridient_box"):
+			pick_box_object_left(ray_col.pick_box_index)
+		elif ray_col.is_in_group("pestle"):
+			start_Action_pick_up_pestle()
+		elif ray_col.is_in_group("pestle_put_dowm_area"):
+			start_Action_put_down_pestle()
+		elif ray_col.is_in_group("mortar"):
+			mortar_procces_interaction()
+		elif ray_col.is_in_group("jarra_azul"):
+			jarra_azul_procces_interaction()
+
+
+#region jarra_azul
+var jarra_azul_action = null
+func procces_jarra_azul_icon():
+	if left_hand_object == null and rigth_hand_object == null:
+		gui_controller.change_cross_image("hand_pick")
+		jarra_azul_action = "pick_up"
+	else:
+		gui_controller.change_cross_image("default")
+		jarra_azul_action = null
+		
+func jarra_azul_procces_interaction():
+	if jarra_azul_action == "pick_up":
+		animation_controller.lunch_anim_JarraAzul_pickup()
+
+
+#endregion
 
 
 #region Mortar

@@ -5,7 +5,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_pfhe5"]
 size = Vector3(0.266113, 0.0319824, 0.281982)
 
-[node name="Pestle_put_down_area" type="Area3D"]
+[node name="Pestle_put_down_area" type="Area3D" groups=["pestle_put_dowm_area"]]
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_grisv")

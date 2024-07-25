@@ -9,7 +9,7 @@ radius = 0.109178
 [node name="Mortar_ray_area" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0112249, 0.806589, 0.257065)
 
-[node name="Mortar_area" type="Area3D" parent="."]
+[node name="Mortar_area" type="Area3D" parent="." groups=["mortar"]]
 script = ExtResource("1_5mfxx")
 active = true
 interactive = true
