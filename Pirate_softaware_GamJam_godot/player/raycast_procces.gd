@@ -47,7 +47,7 @@ var left_hand_free = true
 var left_hand_object = null
 var rigth_hand_free = true
 var rigth_hand_object = null
-
+var ingridient_in_hand = null
 			
 func procces_interaction_request():
 	
@@ -90,15 +90,20 @@ func mortar_procces_interaction():
 				animation_controller.put_ingridient_in_mortar_with_pestle()
 			else:
 				animation_controller.put_ingridient_in_mortar()
-				
 			
 		"smash":
+			animation_controller.lunch_anim_Action_smash_smash()
 			print("mortar action, smash")
 			
-var ingridients_model : Array =["res://assets/3d/ingridients/00_ING_gem_purple.glb","res://assets/3d/ingridients/01_ING_mushroom_morcilla.glb","res://assets/3d/ingridients/02_ING_mushroom_Liberty Cap.glb","res://assets/3d/ingridients/03_ING_trunpetflower.glb","res://assets/3d/ingridients/04_ING_mushroom_death_trumpet.glb","res://assets/3d/ingridients/05_ING_gem_blue.glb","res://assets/3d/ingridients/05_ING_gem_blue.glb","res://assets/3d/ingridients/07_ING_bird_head.glb","res://assets/3d/ingridients/08_ING_mushroom_earthball.glb","res://assets/3d/ingridients/09_ING_gem_green.glb","res://assets/3d/ingridients/10_ING_mushroom_porcini.glb","res://assets/3d/ingridients/11_ING_mushroom_puff.glb","res://assets/3d/ingridients/11_ING_mushroom_puff.glb","res://assets/3d/ingridients/13_ING_gem_red.glb","res://assets/3d/ingridients/14_ING_seashell.glb"]
+@export var mortar_in_table : Node3D
+
 func procces_put_ingridient_into_the_mortar():
 	print("ingridient into de mortar")
+	mortar_in_table.add_ingridient(ingridient_in_hand)
+	delete_item_in_left_hand()
 	
+func smash_ingridients_on_mortar():
+	mortar_in_table.smash_all_the_shitty_ingridients()
 #endregion
 #region PESTLE
 @onready var pestle = $"../../player/Skeleton3D/Right_hand_Attach/rigth_hand/pestle"
@@ -135,6 +140,8 @@ func procces_pestle_pick_drop_action():
 #region INGRIDIENT_BOC
 
 func pick_box_object_left(box_index):
+	ingridient_in_hand = box_index
+	
 	left_hand_object = "ingridient"
 	ray_col.waiting_hand = true
 	ray_col.hand_node = left_hand

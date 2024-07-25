@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ltvxcbxgk0sw"]
+
+[ext_resource type="Script" path="res://assets/3d/props/Mortar/on_mortar_ingridient.gd" id="1_b88d4"]
+[ext_resource type="PackedScene" uid="uid://bhbiatkladjni" path="res://assets/3d/ingridients/triturated/triturated.tscn" id="2_jtd6r"]
+
+[node name="on_mortar_ingridient" type="Node3D"]
+transform = Transform3D(-0.127065, 0, 0.991894, 0, 1, 0, -0.991894, 0, -0.127065, 0, 0, 0)
+script = ExtResource("1_b88d4")
+
+[node name="ingridient_position" type="Marker3D" parent="."]
+transform = Transform3D(0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, 0.0438847, 0.0363223, 0)
+
+[node name="triturated" parent="." instance=ExtResource("2_jtd6r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[editable path="triturated"]
