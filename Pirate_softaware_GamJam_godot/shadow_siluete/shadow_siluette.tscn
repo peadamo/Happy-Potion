@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://4wchernmd2xn"]
+
+[ext_resource type="PackedScene" uid="uid://djp6nhs6fof1f" path="res://shadow_siluete/shadow_siluette.glb" id="1_u3yti"]
+[ext_resource type="Script" path="res://shadow_siluete/shadow_siluette.gd" id="2_gh8j2"]
+
+[node name="shadow_siluette" instance=ExtResource("1_u3yti")]
+script = ExtResource("2_gh8j2")
