@@ -24,6 +24,8 @@ func _process(_delta):
 			procces_jarra_azul_icon()
 		elif ray_col.is_in_group("jarra_Azul_put_down_area"):
 			gui_controller.change_cross_image("put_in")
+		elif ray_col.is_in_group("caldero_put_water_area"):
+			gui_controller.change_cross_image("put_water")
 	else:
 		gui_controller.change_cross_image("default")
 
@@ -68,6 +70,20 @@ func procces_interaction_request():
 			jarra_azul_procces_interaction()
 		elif ray_col.is_in_group("jarra_Azul_put_down_area"):
 			jarra_azul_put_down()
+		elif ray_col.is_in_group("caldero_put_water_area"):
+			procced_put_liquid_diahrrea_shit_into_the_caldero()
+			
+			
+			
+#region Caldero things
+var actual_jar = null
+func procced_put_liquid_diahrrea_shit_into_the_caldero():
+	match actual_jar:
+		"jarra_azul":
+			animation_controller.just_put_your_blue_jar_into_my_caldero_sweety()
+			
+	
+#endregion
 
 #region jarra_azul
 var jarra_azul_action = null
@@ -96,6 +112,7 @@ func jarra_azul_put_down():
 func procces_jarraAzul_pick_drop_action():
 	if animation_pick_jarraAzul:
 		print("pick_jarra_azul")
+		actual_jar = "jarra_azul"
 		rigth_hand_object = "jarra_azul"
 		left_hand_object = "jarra_azul"
 		
@@ -104,6 +121,7 @@ func procces_jarraAzul_pick_drop_action():
 		
 		jarra_azul_in_hand.jarra_azul_ray_detector.make_visible_true()
 		level_areas_controller.on_off_area_jarra_azul_put_down_area(true)
+		level_areas_controller.on_off_area_caldero_put_water_area(true)
 	else :
 		print("drop_jarra_azul")
 		rigth_hand_object = null
@@ -114,6 +132,8 @@ func procces_jarraAzul_pick_drop_action():
 		
 		jarra_azul_in_hand.jarra_azul_ray_detector.make_visible_false()
 		level_areas_controller.on_off_area_jarra_azul_put_down_area(false)
+		level_areas_controller.on_off_area_caldero_put_water_area(false)
+		
 #endregion
 
 

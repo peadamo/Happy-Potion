@@ -133,3 +133,11 @@ func lunch_anim_JarraAzul_put_down():
 	
 	next_idle_anim = "Sit_pose_idle"
 	idle_anim_delay.start()
+	
+func just_put_your_blue_jar_into_my_caldero_sweety():
+	one_shot_animation_node.play_mode = 0
+	one_shot_animation_node.animation = "jarra_azul_load_olla"
+	animation_tree.set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
+	
+	next_idle_anim = "jarra_azul_idle_pose"
+	idle_anim_delay.start()
