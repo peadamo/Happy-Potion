@@ -77,15 +77,19 @@ func procces_interaction_request():
 			
 #region Caldero things
 var actual_jar = null
+
+
 func procced_put_liquid_diahrrea_shit_into_the_caldero():
 	match actual_jar:
 		"jarra_azul":
 			animation_controller.just_put_your_blue_jar_into_my_caldero_sweety()
 			
 @onready var liquid_jau = $"../../player/Skeleton3D/Right_hand_Attach/marker_blue_jar/liquid_jau"
+@export var caldero : Node3D
 	
 func start_water_emmiting():
 	liquid_jau.emitting = true
+	caldero.add_water()
 func stop_water_emmiting():
 	liquid_jau.emitting = false
 #endregion

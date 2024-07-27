@@ -61,7 +61,7 @@ material = SubResource("StandardMaterial3D_u0kfr")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hhm66"]
 transparency = 1
-albedo_color = Color(0.592527, 0.385556, 0.0454028, 1)
+albedo_color = Color(0.519996, 0.367029, 0.613395, 1)
 albedo_texture = ExtResource("4_h2sbq")
 
 [sub_resource type="QuadMesh" id="QuadMesh_gg54w"]
