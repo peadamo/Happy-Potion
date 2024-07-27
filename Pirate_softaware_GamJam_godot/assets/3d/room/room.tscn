@@ -10,7 +10,7 @@ script = ExtResource("2_txh5f")
 [node name="Cube_010" parent="." index="7"]
 visible = false
 
-[node name="REF_borrar" parent="." index="17"]
+[node name="CharacterMesh_001" parent="." index="23"]
 visible = false
 
-[node name="Rain" parent="." index="36" instance=ExtResource("2_cpjkd")]
+[node name="Rain" parent="." index="29" instance=ExtResource("2_cpjkd")]

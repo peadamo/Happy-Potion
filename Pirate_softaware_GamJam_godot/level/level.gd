@@ -4,6 +4,7 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$player.visible=true
 	$player/player/Skeleton3D/BoneAttachment3D/Camera3D/sahder.visible=true
 	pass # Replace with function body.
 

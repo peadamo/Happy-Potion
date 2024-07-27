@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvk3lhmfb6jmt"]
+
+[ext_resource type="PackedScene" uid="uid://c7q7wds2jogew" path="res://assets/3d/props/candle/candle.glb" id="1_bicpv"]
+[ext_resource type="PackedScene" uid="uid://dknv4u8ig2xl6" path="res://props/candle_ligth/candle_ligth.tscn" id="2_3jhss"]
+
+[node name="candle" instance=ExtResource("1_bicpv")]
+
+[node name="CandleLigth" parent="." index="1" instance=ExtResource("2_3jhss")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.265, 0)
