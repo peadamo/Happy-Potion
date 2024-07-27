@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://caaq2l5a8g376"]
+
+[ext_resource type="Texture2D" uid="uid://biw421l30gaps" path="res://props/jar_liquid/fire_01.png" id="1_neadu"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ndujx"]
+angle_max = 313.0
+direction = Vector3(4.5, 1.97, 0)
+spread = 7.89
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+scale_min = 0.01
+scale_max = 0.03
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vo5v0"]
+transparency = 1
+albedo_color = Color(0.205879, 0.325097, 0.367716, 0.619608)
+albedo_texture = ExtResource("1_neadu")
+
+[sub_resource type="QuadMesh" id="QuadMesh_1aihc"]
+material = SubResource("StandardMaterial3D_vo5v0")
+
+[node name="GPUParticles3D" type="GPUParticles3D"]
+transform = Transform3D(0.985601, -0.156407, -0.0642401, 0.0940193, 0.822723, -0.560613, 0.140535, 0.546501, 0.825583, 0.0124073, 0.256922, 0.00637537)
+amount = 50
+lifetime = 0.1
+transform_align = 1
+process_material = SubResource("ParticleProcessMaterial_ndujx")
+draw_pass_1 = SubResource("QuadMesh_1aihc")

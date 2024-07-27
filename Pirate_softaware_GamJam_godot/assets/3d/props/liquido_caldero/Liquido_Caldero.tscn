@@ -1,3 +1,126 @@
-[gd_scene format=3 uid="uid://dq5md6j563460"]
+[gd_scene load_steps=19 format=3 uid="uid://dq5md6j563460"]
 
-[node name="LiquidoCaldero" type="Node3D"]
+[ext_resource type="Script" path="res://assets/3d/props/caldero/liquido_caldero.gd" id="1_n1338"]
+[ext_resource type="Texture2D" uid="uid://036r1u5d6kth" path="res://assets/3d/props/liquido_caldero/twirl_03.png" id="2_unhxu"]
+[ext_resource type="Texture2D" uid="uid://fyh84kdhi78c" path="res://assets/3d/props/liquido_caldero/smoke_04.png" id="3_ispi8"]
+[ext_resource type="Texture2D" uid="uid://3tu402nncqu2" path="res://assets/3d/props/liquido_caldero/circle_01.png" id="4_h2sbq"]
+
+[sub_resource type="Animation" id="Animation_3ilqr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("rotation_elements:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.5708, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qx42u"]
+resource_name = "rotate"
+length = 30.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("rotation_elements:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 30),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.5708, 0, 0), Vector3(-1.5708, 6.28319, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3c5wu"]
+_data = {
+"RESET": SubResource("Animation_3ilqr"),
+"rotate": SubResource("Animation_qx42u")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3eu3n"]
+transparency = 1
+albedo_color = Color(0.154578, 0.041866, 0, 1)
+albedo_texture = ExtResource("2_unhxu")
+
+[sub_resource type="QuadMesh" id="QuadMesh_f034h"]
+material = SubResource("StandardMaterial3D_3eu3n")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u0kfr"]
+transparency = 1
+albedo_color = Color(0.227063, 0.138231, 0.0193789, 1)
+albedo_texture = ExtResource("3_ispi8")
+
+[sub_resource type="QuadMesh" id="QuadMesh_dobtf"]
+material = SubResource("StandardMaterial3D_u0kfr")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hhm66"]
+transparency = 1
+albedo_color = Color(0.592527, 0.385556, 0.0454028, 1)
+albedo_texture = ExtResource("4_h2sbq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_gg54w"]
+material = SubResource("StandardMaterial3D_hhm66")
+
+[sub_resource type="Curve" id="Curve_u2dm0"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_fbqs6"]
+curve = SubResource("Curve_u2dm0")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_as3ss"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 0.0
+emission_ring_radius = 0.125
+emission_ring_inner_radius = 0.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.01
+scale_max = 0.02
+scale_curve = SubResource("CurveTexture_fbqs6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fq2oj"]
+albedo_color = Color(0.275921, 0.118909, 0.0211869, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_36as7"]
+material = SubResource("StandardMaterial3D_fq2oj")
+height = 0.5
+is_hemisphere = true
+
+[node name="liquido_caldero" type="Node3D"]
+script = ExtResource("1_n1338")
+
+[node name="liquido_rotation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3c5wu")
+}
+
+[node name="rotation_elements" type="Node3D" parent="."]
+transform = Transform3D(0.295015, 0, 0, 0, -1.06795e-06, 0.295015, 0, -0.295015, -1.06795e-06, 0, 0, 0)
+
+[node name="espuma" type="MeshInstance3D" parent="rotation_elements"]
+transform = Transform3D(-0.960294, -0.278991, 4.44089e-16, 0.278991, -0.960294, -2.9976e-15, 0, -1.77636e-15, 1, 4.45973e-18, 1.42109e-14, 0.02)
+mesh = SubResource("QuadMesh_f034h")
+skeleton = NodePath("../..")
+
+[node name="mugre" type="MeshInstance3D" parent="rotation_elements"]
+transform = Transform3D(0.722042, 0.848122, 3.70726e-08, -0.848122, 0.722042, -1.71264e-08, -3.70726e-08, -1.71263e-08, 1.11385, 0, 0, 0.01)
+mesh = SubResource("QuadMesh_dobtf")
+skeleton = NodePath("../..")
+
+[node name="liquido" type="MeshInstance3D" parent="rotation_elements"]
+transform = Transform3D(0.722042, 0.848122, 3.70726e-08, -0.848122, 0.722042, -1.71264e-08, -3.70726e-08, -1.71263e-08, 1.11385, 0, 0, 0)
+mesh = SubResource("QuadMesh_gg54w")
+skeleton = NodePath("../..")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(0.72697, 0, 0.686669, 0, 1, 0, -0.686669, 0, 0.72697, 0, 0, 0)
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_as3ss")
+draw_pass_1 = SubResource("SphereMesh_36as7")

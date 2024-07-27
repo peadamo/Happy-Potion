@@ -1,97 +1,57 @@
-[gd_scene load_steps=15 format=3 uid="uid://dysg1dbxfwcts"]
+[gd_scene load_steps=7 format=3 uid="uid://dysg1dbxfwcts"]
 
 [ext_resource type="PackedScene" uid="uid://cvwr0covdydu6" path="res://assets/3d/props/caldero/kit_caldero.glb" id="1_jfifx"]
-[ext_resource type="Script" path="res://assets/3d/props/caldero/liquido_caldero.gd" id="2_4ln3h"]
-[ext_resource type="Texture2D" uid="uid://036r1u5d6kth" path="res://assets/3d/props/liquido_caldero/twirl_03.png" id="2_g8x8p"]
-[ext_resource type="Texture2D" uid="uid://fyh84kdhi78c" path="res://assets/3d/props/liquido_caldero/smoke_04.png" id="3_p1stc"]
-[ext_resource type="Texture2D" uid="uid://3tu402nncqu2" path="res://assets/3d/props/liquido_caldero/circle_01.png" id="4_xepi7"]
+[ext_resource type="Script" path="res://assets/3d/props/caldero/kit_caldero.gd" id="2_ck511"]
+[ext_resource type="PackedScene" uid="uid://dq5md6j563460" path="res://assets/3d/props/liquido_caldero/Liquido_Caldero.tscn" id="2_j4yn0"]
 
-[sub_resource type="Animation" id="Animation_qx42u"]
-resource_name = "rotate"
-length = 30.0
+[sub_resource type="Animation" id="Animation_05gcu"]
+resource_name = "move"
+length = 20.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("rotation_elements:rotation")
+tracks/0/path = NodePath("kit_caldero:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 30),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 10, 20),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(-1.5708, 0, 0), Vector3(-1.5708, 6.28319, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0.00872665, 0.0523599, 0.00349066), Vector3(0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_3ilqr"]
+[sub_resource type="Animation" id="Animation_fqnoa"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("rotation_elements:rotation")
+tracks/0/path = NodePath("kit_caldero:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-1.5708, 0, 0)]
+"values": [Vector3(0.00174533, 0, 0.00349066)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_3c5wu"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_32mtr"]
 _data = {
-"RESET": SubResource("Animation_3ilqr"),
-"rotate": SubResource("Animation_qx42u")
+"RESET": SubResource("Animation_fqnoa"),
+"move": SubResource("Animation_05gcu")
 }
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3eu3n"]
-transparency = 1
-albedo_color = Color(0.154578, 0.041866, 0, 1)
-albedo_texture = ExtResource("2_g8x8p")
-
-[sub_resource type="QuadMesh" id="QuadMesh_f034h"]
-material = SubResource("StandardMaterial3D_3eu3n")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u0kfr"]
-transparency = 1
-albedo_color = Color(0.227063, 0.138231, 0.0193789, 1)
-albedo_texture = ExtResource("3_p1stc")
-
-[sub_resource type="QuadMesh" id="QuadMesh_dobtf"]
-material = SubResource("StandardMaterial3D_u0kfr")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hhm66"]
-transparency = 1
-albedo_color = Color(0.592527, 0.385556, 0.0454028, 1)
-albedo_texture = ExtResource("4_xepi7")
-
-[sub_resource type="QuadMesh" id="QuadMesh_gg54w"]
-material = SubResource("StandardMaterial3D_hhm66")
 
 [node name="kit_caldero_scne" instance=ExtResource("1_jfifx")]
+script = ExtResource("2_ck511")
 
-[node name="liquido_caldero" type="Node3D" parent="." index="1"]
-script = ExtResource("2_4ln3h")
+[node name="kit_caldero" parent="." index="0"]
+transform = Transform3D(0.999994, -0.00349065, 0, 0.00349065, 0.999992, -0.00174533, 6.09233e-06, 0.00174532, 0.999998, 0, 0, 0)
 
-[node name="liquido_rotation" type="AnimationPlayer" parent="liquido_caldero" index="0"]
+[node name="liquido_caldero" parent="kit_caldero" index="3" instance=ExtResource("2_j4yn0")]
+transform = Transform3D(0.1, 2.87114e-10, 6.36647e-13, -2.87114e-10, 0.1, 1.39698e-10, -6.36646e-13, -1.39698e-10, 0.1, 0, -0.129, 0)
+
+[node name="caldero_balanceo" type="AnimationPlayer" parent="." index="1"]
 libraries = {
-"": SubResource("AnimationLibrary_3c5wu")
+"": SubResource("AnimationLibrary_32mtr")
 }
-
-[node name="rotation_elements" type="Node3D" parent="liquido_caldero" index="1"]
-transform = Transform3D(0.295015, 0, 0, 0, -1.28955e-08, 0.295015, 0, -0.295015, -1.28955e-08, 0, -1.35029, 0)
-
-[node name="espuma" type="MeshInstance3D" parent="liquido_caldero/rotation_elements" index="0"]
-transform = Transform3D(-0.960294, -0.278991, 4.44089e-16, 0.278991, -0.960294, -2.9976e-15, 0, -1.77636e-15, 1, 4.45973e-18, 1.42109e-14, 0.02)
-mesh = SubResource("QuadMesh_f034h")
-skeleton = NodePath("../..")
-
-[node name="mugre" type="MeshInstance3D" parent="liquido_caldero/rotation_elements" index="1"]
-transform = Transform3D(0.722042, 0.848122, 3.70726e-08, -0.848122, 0.722042, -1.71264e-08, -3.70726e-08, -1.71263e-08, 1.11385, 0, 0, 0.01)
-mesh = SubResource("QuadMesh_dobtf")
-skeleton = NodePath("../..")
-
-[node name="liquido" type="MeshInstance3D" parent="liquido_caldero/rotation_elements" index="2"]
-transform = Transform3D(0.722042, 0.848122, 3.70726e-08, -0.848122, 0.722042, -1.71264e-08, -3.70726e-08, -1.71263e-08, 1.11385, 0, 0, 0)
-mesh = SubResource("QuadMesh_gg54w")
-skeleton = NodePath("../..")

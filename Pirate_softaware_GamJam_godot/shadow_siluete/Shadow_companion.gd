@@ -61,7 +61,7 @@ func update_shadow_position(new_area):
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-var real_speed = 1.0
+var real_speed = 0.2
 func _process(delta):
 	if move_shadow:
 		if iterations>0:
